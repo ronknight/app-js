@@ -19,6 +19,7 @@
 <a href="#usage">🚀 Usage</a> •
 <a href="#endpoints">🛣️ Endpoints</a> •
 <a href="#script">📜 Script</a> •
+<a href="#visualization">🔍 Visualization</a> •
 <a href="#disclaimer">⚠️ Disclaimer</a>
 </p>
 
@@ -62,6 +63,43 @@ The `app.js` script sets up an Express.js server that:
 - 💾 Saves `code` and `state` query parameters from the root endpoint
 - 🔒 Stores these values in memory
 - 🔍 Provides an endpoint to retrieve the saved values
+
+## 🔍 Visualization
+
+Here's a flow chart that visualizes the structure and flow of the application:
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+```mermaid
+graph TD
+    A[Start Server] -->|Listen on PORT 80| B[Initialize Variables]
+    B --> C{Receive Request}
+    C -->|GET '/'| D[Save Query Parameters]
+    D --> E[Return Blank HTML]
+    C -->|GET '/get-saved-name'| F{Saved Code Exists?}
+    F -->|Yes| G[Return JSON with Code and State]
+    F -->|No| H[Return 404 Not Found]
+
+    style A fill:#f9d71c,stroke:#333,stroke-width:2px
+    style B fill:#f9d71c,stroke:#333,stroke-width:2px
+    style C fill:#f9d71c,stroke:#333,stroke-width:2px
+    style D fill:#a2d2ff,stroke:#333,stroke-width:2px
+    style E fill:#a2d2ff,stroke:#333,stroke-width:2px
+    style F fill:#f9d71c,stroke:#333,stroke-width:2px
+    style G fill:#a2d2ff,stroke:#333,stroke-width:2px
+    style H fill:#ffadad,stroke:#333,stroke-width:2px
+```
+
+This flow chart illustrates:
+- The server start and initialization process
+- How requests are handled for different endpoints
+- The logic flow for saving and retrieving parameters
+- Success and error states
+
+Color coding:
+- Yellow: Main flow and decision points
+- Light Blue: Successful operations
+- Light Red: Error state
 
 ## ⚠️ Disclaimer
 
