@@ -68,7 +68,6 @@ The `app.js` script sets up an Express.js server that:
 
 Here's a flow chart that visualizes the structure and flow of the application:
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
 ```mermaid
 graph TD
